@@ -218,6 +218,9 @@ body {
   .heading-secondary {
     font-size: 1.2rem;
   }
+  .heading-secondary:nth-child(2){
+    font-size: 2rem;
+  }
   .paragraph {
     font-size: 1rem;
   }
@@ -429,18 +432,21 @@ body {
 }
 
 .card__side--back-1 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730));
-  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+  background-image: linear-gradient(to right bottom, rgb(255, 187, 0,.6), rgb(255, 120, 48,.6)),url(../img/services-1.png);
+  background-size: cover;
+  background-position: top right;
 }
 
 .card__side--back-2 {
-  background-image: linear-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+  background-image: linear-gradient(to right bottom, rgb(126, 213, 111,.6), rgb(40, 180, 133,.6)),url(../img/services-3.png);
+  background-size: cover;
+  background-position: top center;
 }
 
 .card__side--back-3 {
-  background-image: linear-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa));
-  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+  background-image: linear-gradient(to right bottom, rgb(41, 152, 255,.4), rgb(86, 67, 250,.4)),url(../img/services-4.png);
+  background-size: cover;
+  background-position: top right;
 }
 
 .card:hover .card__side--front {
@@ -464,18 +470,18 @@ body {
 }
 
 .card__picture--1 {
-  background-image: linear-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730)), url(../img/nat-5.jpg);
-  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
+  background-image: linear-gradient(linear, left top, right bottom, from(rgb(255, 185, 0)), to(#ff7730)), url(../img/services-1.png);
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/services-1.png);
 }
 
 .card__picture--2 {
-  background-image: linear-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485)), url(../img/nat-6.jpg);
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg);
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/main-1.png);
+  background-size: cover;
+  background-position: top center;
 }
 
 .card__picture--3 {
-  background-image: linear-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa)), url(../img/nat-7.jpg);
-  background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg);
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/services-3.png);
 }
 
 .card__heading {
@@ -541,21 +547,6 @@ body {
   text-align: center;
 }
 
-.card__price-box {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 8rem;
-}
-
-.card__price-only {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-}
-
-.card__price-value {
-  font-size: 6rem;
-  font-weight: 100;
-}
 
 @media only screen and (max-width: 56.25em), only screen and (hover: none) {
   .card {
@@ -827,109 +818,6 @@ body {
 
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1;
-}
-
-.popup {
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
-  .popup {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-}
-.popup__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 75%;
-  background-color: #fff;
-  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-  display: table;
-  overflow: hidden;
-  opacity: 0;
-  -webkit-transform: translate(-50%, -50%) scale(0.25);
-  transform: translate(-50%, -50%) scale(0.25);
-  -webkit-transition: all 0.5s 0.2s;
-  transition: all 0.5s 0.2s;
-}
-
-.popup__left {
-  width: 33.333333%;
-  display: table-cell;
-}
-
-.popup__right {
-  width: 66.6666667%;
-  display: table-cell;
-  vertical-align: middle;
-  padding: 3rem 5rem;
-}
-
-.popup__img {
-  display: block;
-  width: 100%;
-}
-
-.popup__text {
-  font-size: 1.4rem;
-  margin-bottom: 4rem;
-  -moz-column-count: 2;
-  -moz-column-gap: 4rem;
-  -moz-column-rule: 1px solid #eee;
-  -webkit-column-count: 2;
-  column-count: 2;
-  -webkit-column-gap: 4rem;
-  column-gap: 4rem;
-  -webkit-column-rule: 1px solid #eee;
-  column-rule: 1px solid #eee;
-  -ms-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-}
-
-.popup:target {
-  opacity: 1;
-  visibility: visible;
-}
-
-.popup:target .popup__content {
-  opacity: 1;
-  -webkit-transform: translate(-50%, -50%) scale(1);
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.popup__close:link, .popup__close:visited {
-  color: #777;
-  position: absolute;
-  top: 2.5rem;
-  right: 2.5rem;
-  font-size: 3rem;
-  text-decoration: none;
-  display: inline-block;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-  line-height: 1;
-}
-
-.popup__close:hover {
-  color: #55c57a;
 }
 
 .story {
@@ -1452,6 +1340,7 @@ body {
 .section-stories {
   position: relative;
   padding: 15rem 0;
+  background-color: rgb(0, 0, 0,.6);
 }
 
 @media only screen and (max-width: 56.25em) {
@@ -1459,19 +1348,19 @@ body {
     padding: 10rem 0;
   }
 }
-.section-book {
+.section-contact {
   padding: 15rem 0;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
 }
 
 @media only screen and (max-width: 56.25em) {
-  .section-book {
+  .section-contact {
     padding: 10rem 0;
   }
 }
-.book {
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+.contact {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/main-2.jpg);
   background-size: 100%;
   border-radius: 3px;
   -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
@@ -1479,29 +1368,29 @@ body {
 }
 
 @media only screen and (max-width: 75em) {
-  .book {
-    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg);
+  .contact {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/main-2.jpg);
     background-size: cover;
   }
 }
 @media only screen and (max-width: 56.25em) {
-  .book {
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.9))), url(../img/nat-10.jpg);
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg);
+  .contact {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.9))), url(../img/main-2.jpg);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/main-2.jpg);
   }
 }
-.book__form {
+.contact__form {
   width: 50%;
   padding: 6rem;
 }
 
 @media only screen and (max-width: 75em) {
-  .book__form {
+  .contact__form {
     width: 65%;
   }
 }
 @media only screen and (max-width: 56.25em) {
-  .book__form {
+  .contact__form {
     width: 100%;
   }
 }
