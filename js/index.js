@@ -27,10 +27,10 @@ const handlerDataSubmit = (e) => {
 
   myHttp.setRequestHeader("Content-Type", "application/json");
 
-  myHttp.onreadystatechange = function () {
+  myHttp.onreadystatechange = function (){
     if (myHttp.readyState === 4) {
       if (myHttp.status === 200) {
-        myHttp.send(JSON.stringify(data));
+      
         console.log("Done ✅", myHttp.responseText);
       } else {
         console.error("Error ❌", myHttp.status, myHttp.responseText);
@@ -38,7 +38,7 @@ const handlerDataSubmit = (e) => {
     }
   };
 
- 
+ myHttp.send(JSON.stringify(data));
 //Reset Data
   email.value="";
   farmName.value="",
