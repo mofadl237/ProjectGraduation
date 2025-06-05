@@ -10,6 +10,24 @@ let farmName = document.getElementById("farmName");
 let phoneNumber = document.getElementById("phoneNumber");
 const submitDataContact = document.getElementById("submitDataContact");
 
+function showToast(message, duration = 3000) {
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.innerText = message;
+
+  const container = document.getElementById("toast-container");
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translateX(100%)";
+    setTimeout(() => {
+      toast.remove();
+    }, 300); 
+  }, duration);
+}
+
+
 //2- Handler Function Logic
 const handlerDataSubmit = (e) => {
   e.preventDefault();
@@ -30,9 +48,9 @@ const handlerDataSubmit = (e) => {
   myHttp.onreadystatechange = function () {
     if (myHttp.readyState === 4) {
       if (myHttp.status === 200) {
-        console.log("Done ✅", myHttp.responseText);
+        showToast("Success ✅");
       } else {
-        console.error("Error ❌", myHttp.status, myHttp.responseText);
+       showToast("Error Not Add ❌");
       }
     }
   };
