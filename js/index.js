@@ -19,7 +19,7 @@ const handlerDataSubmit = (e) => {
   console.log(data);
 
   const myHttp = new XMLHttpRequest();
-  myHttp.open("POST", "https://cors-anywhere.herokuapp.com/https://farmxpertapi.runasp.net/api/ClientRequest/Submit");
+   myHttp.open("POST", "https://cors-anywhere.herokuapp.com/http://farmxpertapi.runasp.net/api/ClientRequest/Submit");
 //   myHttp.open(
 //     "POST",
 //     "http://farmxpertapi.runasp.net/api/ClientRequest/Submit"
