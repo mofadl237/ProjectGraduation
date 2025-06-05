@@ -19,7 +19,7 @@ const handlerDataSubmit = (e) => {
   console.log(data);
 
   const myHttp = new XMLHttpRequest();
-   myHttp.open("POST", "http://farmxpertapi.runasp.net/api/ClientRequest/Submit");
+   myHttp.open("POST", "https://cors-anywhere.herokuapp.com/http://farmxpertapi.runasp.net/api/ClientRequest/Submit");
 //   myHttp.open(
 //     "POST",
 //     "http://farmxpertapi.runasp.net/api/ClientRequest/Submit"
@@ -27,10 +27,9 @@ const handlerDataSubmit = (e) => {
 
   myHttp.setRequestHeader("Content-Type", "application/json");
 
-  myHttp.onreadystatechange = function (){
+  myHttp.onreadystatechange = function () {
     if (myHttp.readyState === 4) {
       if (myHttp.status === 200) {
-      
         console.log("Done ✅", myHttp.responseText);
       } else {
         console.error("Error ❌", myHttp.status, myHttp.responseText);
@@ -38,11 +37,11 @@ const handlerDataSubmit = (e) => {
     }
   };
 
- myHttp.send(JSON.stringify(data));
-//Reset Data
+  myHttp.send(JSON.stringify(data));
+
   email.value="";
-  farmName.value="",
-  phoneNumber.value="",
+  farmName.value="";
+  phoneNumber.value="";
 
 };
 
